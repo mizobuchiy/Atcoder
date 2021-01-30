@@ -96,7 +96,7 @@ using LL = int64_t;
 #define EXIST(s, e) ((s).find(e) != (s).end())
 
 // repetition
-#define FOR(i, a, b) for (int i = (a); i <= static_cast<int>(b); ++i)
+#define FOR(i, a, b) for (int i = (a); i < static_cast<int>(b); ++i)
 #define REP(i, n) FOR(i, 0, n)
 
 // constant
@@ -117,6 +117,20 @@ int main() {
   ios::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
+  int64_t n;
+  cin >> n;
+  while (n % 2 == 0) {
+    n /= 2;
+  }
+  int64_t cnt = 0, sq = sqrt(n);
+  for (int64_t i = 1; i <= sq; ++i) {
+    if (n % i == 0) {
+      cnt += 2;
+    }
+  }
+  if (sq * sq == n) {
+    --cnt;
+  }
+  cout << cnt * 2 << "\n";
   return 0;
 }
-// https://atcoder.jp/contests/abc189/tasks/abc189_a

@@ -1,28 +1,8 @@
+#pragma GCC target("avx2")
+#pragma GCC optimize("unroll-loops")
+#pragma GCC optimize("O3")
 // include
-#include <algorithm>
-#include <bitset>
-#include <cassert>
-#include <cctype>
-#include <cmath>
-#include <complex>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <fstream>
-#include <iomanip>
-#include <iostream>
-#include <iterator>
-#include <list>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <set>
-#include <sstream>
-#include <stack>
-#include <string>
-#include <utility>
-#include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -103,7 +83,7 @@ template <class T>
 inline T lcm(T a, T b) {
   return a * b / gcd(a, b);
 }
-// typedef
+// using
 using VI = vector<int>;
 using VVI = vector<VI>;
 using VS = vector<string>;
@@ -137,12 +117,17 @@ constexpr LL INF = 1e10;
        << " " << __FILE__ << endl;
 
 int main() {
-  ios::sync_with_stdio(0);
-  cin.tie(0);
-  cout.tie(0);
-  string c;
-  cin >> c;
-  cout << ((c[0] == c[1] && c[1] == c[2]) ? "Won" : "Lost") << "\n";
-
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+  cout.tie(nullptr);
+  int a, b, c;
+  cin >> a >> b >> c;
+  if (a + c > b) {
+    cout << "Takahashi"
+         << "\n";
+  } else {
+    cout << "Aoki"
+         << "\n";
+  }
   return 0;
 }
